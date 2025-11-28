@@ -2,13 +2,13 @@
 
 :root {
   --background: #ffffff;
-  --foreground: #0f172a; /* Slate 900 */
+  --foreground: #0f172a;
 }
 
-/* Force Light Mode styles for inputs to avoid visibility issues */
+/* Force Light Mode styles for inputs */
 input, textarea, select {
-  color: #0f172a !important; /* Force Dark Text */
-  background-color: #f8fafc !important; /* Slate 50 */
+  color: #0f172a !important;
+  background-color: #f8fafc !important;
 }
 
 body {
@@ -41,14 +41,12 @@ body {
   border: 3px solid white;
 }
 
-/* Marker Colors based on Type */
 .marker-pin.rescue { background: #dc2626; } /* Red */
 .marker-pin.food { background: #f97316; } /* Orange */
 .marker-pin.medicine { background: #10b981; } /* Emerald */
 .marker-pin.shelter { background: #2563eb; } /* Blue */
 .marker-pin.other { background: #64748b; } /* Slate */
 
-/* Icon rotation fix inside marker */
 .marker-pin svg {
   transform: rotate(45deg);
   color: white;
@@ -56,17 +54,36 @@ body {
   height: 20px;
 }
 
-/* Popup Styles */
+/* --- New Popup Styles (UI Fixed) --- */
 .leaflet-popup-content-wrapper {
-  border-radius: 16px !important;
-  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1) !important;
-  padding: 0 !important;
+  border-radius: 12px !important; /* Rounded Corners */
+  padding: 0 !important; /* Remove default padding */
   overflow: hidden;
+  box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.2) !important;
 }
+
 .leaflet-popup-content {
   margin: 0 !important;
-  width: 260px !important;
+  width: 300px !important; /* Mobile වලට ගැලපෙන හොඳම ප්‍රමාණය */
+  line-height: 1.5;
 }
+
 .leaflet-popup-tip {
   background: white;
+}
+
+/* Close button style fix */
+.leaflet-container a.leaflet-popup-close-button {
+  top: 8px;
+  right: 8px;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.8);
+  color: #333;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
