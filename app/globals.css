@@ -87,3 +87,8 @@ body {
   font-size: 16px;
   box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
+
+.marker-pin.shelter { background: #2563eb; } 
+.marker-pin.other { background: #64748b; } 
+
+.marker-pin.offer { background: #db2777; }
