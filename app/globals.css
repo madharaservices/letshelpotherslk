@@ -1,0 +1,72 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #0f172a; /* Slate 900 */
+}
+
+/* Force Light Mode styles for inputs to avoid visibility issues */
+input, textarea, select {
+  color: #0f172a !important; /* Force Dark Text */
+  background-color: #f8fafc !important; /* Slate 50 */
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: system-ui, -apple-system, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* --- Map Custom Markers --- */
+.custom-marker-icon {
+  background: transparent;
+  border: none;
+}
+
+.marker-pin {
+  width: 40px;
+  height: 40px;
+  border-radius: 50% 50% 50% 0;
+  background: #3b82f6;
+  position: absolute;
+  transform: rotate(-45deg);
+  left: 50%;
+  top: 50%;
+  margin: -20px 0 0 -20px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 3px solid white;
+}
+
+/* Marker Colors based on Type */
+.marker-pin.rescue { background: #dc2626; } /* Red */
+.marker-pin.food { background: #f97316; } /* Orange */
+.marker-pin.medicine { background: #10b981; } /* Emerald */
+.marker-pin.shelter { background: #2563eb; } /* Blue */
+.marker-pin.other { background: #64748b; } /* Slate */
+
+/* Icon rotation fix inside marker */
+.marker-pin svg {
+  transform: rotate(45deg);
+  color: white;
+  width: 20px;
+  height: 20px;
+}
+
+/* Popup Styles */
+.leaflet-popup-content-wrapper {
+  border-radius: 16px !important;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1) !important;
+  padding: 0 !important;
+  overflow: hidden;
+}
+.leaflet-popup-content {
+  margin: 0 !important;
+  width: 260px !important;
+}
+.leaflet-popup-tip {
+  background: white;
+}
