@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next"; // Viewport එකතු කළා
 import { Noto_Sans_Sinhala } from "next/font/google"; // සිංහල ෆොන්ට් එකක් ගමු (ලස්සනයි)
 import "./globals.css";
+import { Toaster } from 'sonner';
 
 // Google Fonts වලින් Noto Sans Sinhala ෆොන්ට් එක ගන්නවා
 const sinhalaFont = Noto_Sans_Sinhala({
@@ -49,6 +50,7 @@ export default function RootLayout({
     <html lang="si">
       <body className={`${sinhalaFont.className} antialiased bg-slate-50`}>
         {children}
+      <Toaster position="top-center" richColors />
       </body>
     </html>
   );
